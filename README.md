@@ -56,7 +56,7 @@ La aplicación estará disponible en `http://localhost:8080`.
 Para acceder a la consola de la base de datos H2:
 
 - **Asegúrate de que la aplicación esté en ejecución.**
-- **Navega** a `http://localhost:8080/h2-console` en tu navegador.
+- **Navega** a `http://localhost:8080/api/h2-console` en tu navegador.
 - **Usa la siguiente URL de conexión JDBC:** `jdbc:h2:mem:testdb`.
 - **Ingresa** con el nombre de usuario `sa` y deja el campo de contraseña vacío (a menos que hayas configurado una contraseña específica).
 - **Interactúa** con la base de datos directamente desde la consola para ejecutar consultas SQL, ver los datos existentes, o realizar cualquier otra operación de base de datos.
