@@ -1,25 +1,35 @@
 package org.zara.ecommercepriceserviceapi.application.service.impl;
 
 import java.time.LocalDateTime;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.zara.ecommercepriceserviceapi.application.dto.PriceDTO;
+import org.zara.ecommercepriceserviceapi.application.exception.ResourceNotFoundException;
+import org.zara.ecommercepriceserviceapi.application.mapper.PriceMapper;
 import org.zara.ecommercepriceserviceapi.application.service.PriceService;
-import org.zara.ecommercepriceserviceapi.infrastructure.persistence.repository.PriceRepository;
+import org.zara.ecommercepriceserviceapi.domain.repository.PriceRepository;
 
+@RequiredArgsConstructor
 @Service
 public class PriceServiceImpl implements PriceService {
 
   private final PriceRepository priceRepository;
-
-  @Autowired
-  public PriceServiceImpl(PriceRepository priceRepository) {
-    this.priceRepository = priceRepository;
-  }
+  private final PriceMapper priceMapper;
 
   @Override
   public PriceDTO findApplicablePrice(LocalDateTime applicationDate, int productId, int brandId) {
-
-    return null;
+    return priceRepository
+        .findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
+            productId, brandId, applicationDate, applicationDate)
+        .stream()
+        .findFirst()
+        .map(priceMapper::toApplicablePriceResponse)
+        .orElseThrow(
+            () ->
+                new ResourceNotFoundException(
+                    String.format(
+                        "No applicable price found for product ID %d and brand ID %d at %s",
+                        productId, brandId, applicationDate.toString())));
   }
+
 }

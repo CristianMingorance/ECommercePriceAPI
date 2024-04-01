@@ -61,12 +61,6 @@ Para acceder a la consola de la base de datos H2:
 - **Ingresa** con el nombre de usuario `sa` y deja el campo de contraseña vacío (a menos que hayas configurado una contraseña específica).
 - **Interactúa** con la base de datos directamente desde la consola para ejecutar consultas SQL, ver los datos existentes, o realizar cualquier otra operación de base de datos.
 
-### :mag_right: Explorando la API con Swagger
-
-Una vez que la aplicación esté funcionando, puedes explorar los endpoints disponibles y probar la API utilizando la documentación de Swagger:
-
-- **Navega** a `http://localhost:8080/swagger-ui.html` en tu navegador.
-- Aquí encontrarás una **lista interactiva** de todos los endpoints disponibles, sus parámetros y los modelos de datos.
 
 ### :rocket: Uso de la API
 

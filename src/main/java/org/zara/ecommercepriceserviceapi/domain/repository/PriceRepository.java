@@ -9,6 +9,7 @@ import org.zara.ecommercepriceserviceapi.domain.entity.Price;
 @Repository
 public interface PriceRepository extends JpaRepository<Price, Long> {
 
-  List<Price> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
-          int productId, int brandId, LocalDateTime applicationDateStart, LocalDateTime applicationDateEnd);
+  List<Price>
+      findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
+          Integer productId, Integer brandId, LocalDateTime startDate, LocalDateTime endDate);
 }
