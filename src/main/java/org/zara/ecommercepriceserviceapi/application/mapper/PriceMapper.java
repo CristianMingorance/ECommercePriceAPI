@@ -3,7 +3,7 @@ package org.zara.ecommercepriceserviceapi.application.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.zara.ecommercepriceserviceapi.application.dto.PriceDTO;
-import org.zara.ecommercepriceserviceapi.infrastructure.persistence.entity.Price;
+import org.zara.ecommercepriceserviceapi.domain.entity.Price;
 
 @Mapper(componentModel = "spring")
 public interface PriceMapper {
