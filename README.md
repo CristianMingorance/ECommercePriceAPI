@@ -18,7 +18,7 @@ ECommerce Price API es una REST API desarrollada con Spring Boot, diseñada para
 - :leaves: Spring Boot
 - :floppy_disk: H2 Database
 - :wrench: Lombok
-- :map: MapStruct
+- :gear: MapStruct
 - :test_tube: JUnit
 
 ## :runner: Cómo Empezar
@@ -31,7 +31,7 @@ ECommerce Price API es una REST API desarrollada con Spring Boot, diseñada para
 ### :gear: Instrucciones de Instalación
 
 1. Clona el repositorio en tu máquina local:
-`git clone https://github.com/tu-usuario/ECommercePriceAPI.git`
+`git clone https://github.com/**-tu-usuario-**/ECommercePriceAPI.git`
 
 
 2. Navega al directorio del proyecto clonado:
@@ -51,5 +51,40 @@ Para iniciar la aplicación, ejecuta:
 La aplicación estará disponible en `http://localhost:8080`.
 
 
+### :hammer_and_pick: Configuración de la Base de Datos H2
+
+Para acceder a la consola de la base de datos H2:
+
+- **Asegúrate de que la aplicación esté en ejecución.**
+- **Navega** a `http://localhost:8080/api/h2-console` en tu navegador.
+- **Usa la siguiente URL de conexión JDBC:** `jdbc:h2:mem:testdb`.
+- **Ingresa** con el nombre de usuario `sa` y deja el campo de contraseña vacío (a menos que hayas configurado una contraseña específica).
+- **Interactúa** con la base de datos directamente desde la consola para ejecutar consultas SQL, ver los datos existentes, o realizar cualquier otra operación de base de datos.
+
+
+### :rocket: Uso de la API
+
+Para realizar una consulta de precios, usa el endpoint `/api/prices/{brandId}/{productId}/{applicationDate}`, donde:
+
+- `brandId` es el identificador numérico de la cadena.
+- `productId` es el identificador numérico del producto.
+- `applicationDate` es la fecha y hora de la consulta en formato ISO (p. ej., `2020-06-14T16:00:00`).
+
+Por ejemplo, para consultar el precio de un producto con ID 35455 de la marca 1 en la fecha y hora específica, podrías usar:
+
+```console
+curl "http://localhost:8080/api/prices/1/35455/2020-06-14T16:00:00"
+```
+
+### ❓ Soporte
+
+Si tienes alguna pregunta o te encuentras con algún problema, no dudes en abrir una issue en el repositorio de GitHub.
+### ⭐ Contribuir
+
+Las contribuciones son bienvenidas. 
+
+### ⚖ Licencia
+
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE.md` para obtener más información.
 
 
