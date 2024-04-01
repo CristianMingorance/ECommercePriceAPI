@@ -31,7 +31,7 @@ ECommerce Price API es una REST API desarrollada con Spring Boot, diseñada para
 ### :gear: Instrucciones de Instalación
 
 1. Clona el repositorio en tu máquina local:
-`git clone https://github.com/tu-usuario/ECommercePriceAPI.git`
+`git clone https://github.com/**-tu-usuario-**/ECommercePriceAPI.git`
 
 
 2. Navega al directorio del proyecto clonado:
